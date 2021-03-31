@@ -126,5 +126,8 @@
     <ClCompile Include="BaekJoon 10816번 숫자 카드 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 1654번 랜선 자르기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
