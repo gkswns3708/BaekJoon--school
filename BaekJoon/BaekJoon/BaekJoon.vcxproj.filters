@@ -138,5 +138,8 @@
     <ClCompile Include="BaekJoon 1753번 최단경로.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 1916번 최소비용 구하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
