@@ -144,5 +144,8 @@
     <ClCompile Include="BaekJoon 11404번 플로이드.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 1325번 효율적인 해킹.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
