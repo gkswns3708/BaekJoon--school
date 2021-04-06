@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
+#define pii pair<int,int>
 #define int long long
 using namespace std;
 
@@ -9,19 +10,16 @@ vector<int> edge[300000 + 1];
 bool visited[300000 + 1];
 vector<int> dist(300000+1);
 void BFS(int st) {
-	queue<int> que;
-	que.push(st);
+	queue<pii> que;
+	que.push({ 0,st });
 	visited[st] = 1;
-	int d = 0;
 	while (!que.empty()) {
-		int size = que.size();
-		while (size--) {
-			auto now = que.front();
-			dist[now] = d;
-			que.pop();
-			for (auto nxt : edge[now]) 	if (!visited[nxt]) que.push(nxt), visited[nxt] = 1;
-		}
-		d++;
+		auto [ndist, pos] = que.front();		
+		dist[pos] = ndist;
+		que.pop();
+		for (auto nxt : edge[pos]) 	
+			if (!visited[nxt])
+				que.push({ndist+1,nxt}), visited[nxt] = 1;
 	}
 }
 
