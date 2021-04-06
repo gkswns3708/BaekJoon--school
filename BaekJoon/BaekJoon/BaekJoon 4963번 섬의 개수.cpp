@@ -29,7 +29,6 @@ void BFS(int y, int x) {
 			int nxtx = nx + "01222100"[i] - '1';
 			if (possible(nxty, nxtx)) que.push({ nxty,nxtx }), visited[nxty][nxtx] = 1;
  		}
-
 	}
 }
 
