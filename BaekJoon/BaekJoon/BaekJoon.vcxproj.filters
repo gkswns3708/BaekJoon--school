@@ -159,5 +159,8 @@
     <ClCompile Include="BaekJoon 16953번 A to B.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 16928번 뱀과 사다리 게임.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
