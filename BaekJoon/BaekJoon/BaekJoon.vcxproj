@@ -197,7 +197,10 @@
     <ClCompile Include="BaekJoon 15651번 N과 M (3)cpp.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="BaekJoon 15654번 N과 M (5).cpp" />
+    <ClCompile Include="BaekJoon 15654번 N과 M (5).cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="BaekJoon 15655번 N과 M (6).cpp" />
     <ClCompile Include="BaekJoon 15988번 1,2,3 더하기 3.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
