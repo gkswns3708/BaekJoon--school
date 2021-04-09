@@ -165,13 +165,16 @@
     <ClCompile Include="BaekJoon 12852번 1로 만들기 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="BaekJoon 15649번 N과 M(1).cpp">
+    <ClCompile Include="BaekJoon 15649번 N과 M %281%29.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="BaekJoon 15650번 N과 M (2).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="BaekJoon 15651번 N과 M (3)cpp.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BaekJoon 15652번 N과 M %284%29.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
