@@ -213,5 +213,8 @@
     <ClCompile Include="BaekJoon 2661번 좋은 수열.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 16926번 배열 돌리기 1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
