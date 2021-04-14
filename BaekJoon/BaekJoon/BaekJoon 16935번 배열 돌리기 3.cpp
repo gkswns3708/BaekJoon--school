@@ -1,95 +1,224 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <functional>
-#define pii pair<int,int>
-#define int long long
+#include<iostream>
+#include<vector>
+
+#define endl "\n"
+#define MAX 100
 using namespace std;
-bool vertical, horizontal;
-int pos[4];
-typedef struct S_arr{
-	int pos, dir;
-	int arr[50 + 1][50 + 1];
-}S_arr;
 
-int32_t main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
+int N, M, K;
+int MAP[MAX][MAX];
+int C_MAP[MAX][MAX];
+vector<int> V;
 
-	int N, M, R; cin >> N >> M >> R;
-
-	int arr[100 + 1][100 + 1] = { 0, };
-	int temp[4][50 + 1][50 + 1] = { 0, };
-	S_arr s_arr[4];
-	for (int i = 0; i < N;i++) for (int j = 0; j < M;j++) {
-		if (i < N / 2 && j < M / 2) cin >> s_arr[0].arr[i][j];
-		else if (i >= N / 2 && j < M / 2) cin >> s_arr[1].arr[i- N/2][j];
-		else if (i < N / 2 && j >= M / 2) cin >> s_arr[2].arr[i][j - M/2];
-		else if(i >= N / 2 && j >= M / 2) cin >> s_arr[3].arr[i- N/2][j-M/2];
-	}
-	for (int i = 0; i < 4;i++) {
-		pos[i] = i;
-		s_arr[i].dir = 0;
-	}
-	while (R--) {
-		int r; cin >> r;
-		switch(r) {
-			case 1:
-				vertical = !vertical;	
-				swap(pos[0], pos[2]);
-				swap(pos[1], pos[3]);
-				break;
-			case 2:
-				horizontal = !horizontal;
-				swap(pos[0], pos[1]);
-				swap(pos[2], pos[3]);
-				break;
-			case 3:
-				int tmp = pos[0];
-				for (int i = 0; i < 4;i++) {
-					pos[i] = pos[(i + 1) % 4];
-					s_arr[i].dir = (s_arr[i].dir + 1) % 4;
-				}
-				pos[3] = tmp;
-				break;
-			case 4:
-				int tmp = pos[3];
-				for (int i = 0; i < 4;i++) {
-					pos[i] = pos[(i + 3) % 4];
-					s_arr[i].dir = (s_arr[i].dir + 3) % 4;
-					s_arr[i].pos = (s_arr[i].pos + 3) % 4;
-				}
-				pos[0] = tmp;
-				break;
-			case 5:
-				for (int i = 0; i < 4;i++) {
-					s_arr[i].pos = (s_arr[i].pos + 1) % 4;
-				}
-				break;
-			case 6:
-				for (int i = 0; i < 4;i++) {
-					s_arr[i].pos = (s_arr[i].pos + 3) % 4;
-				}
-				break;
-		}
-	}
-
-	
-
-	for (int n = 0; n < 4;n++) {
-		if (vertical) {
-			for (int i = 0; i < N / 2;i++)  for (int j = 0; j < M / 2;j++) temp[n][N / 2 - 1 - i][j] = s_arr[n].arr[i][j];
-			for (int i = 0; i < N / 2;i++)  for (int j = 0; j < M / 2;j++) s_arr[n].arr[i][j] = temp[n][i][j];
-		}
-		if (horizontal) {
-			for (int i = 0; i < N / 2;i++) 	for (int j = 0; j < M / 2;j++) temp[n][i][N / 2 - 1 - j] = s_arr[n].arr[i][j];
-			for (int i = 0; i < N / 2;i++)  for (int j = 0; j < M / 2;j++) s_arr[n].arr[i][j] = temp[n][i][j];
-		}
-		while(s_arr[n].dir--) rotateR(n);
-	}
-
-	
-
-	return 0;
+void Input()
+{
+    cin >> N >> M >> K;
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < M; j++)
+        {
+            cin >> MAP[i][j];
+        }
+    }
+    for (int i = 0; i < K; i++)
+    {
+        int a; cin >> a;
+        V.push_back(a);
+    }
 }
+
+void Print()
+{
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < M; j++)
+        {
+            cout << MAP[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void Copy_MAP(int A[][MAX], int B[][MAX])
+{
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < M; j++)
+        {
+            A[i][j] = B[i][j];
+        }
+    }
+}
+
+void Cmd_One()
+{
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < M; j++)
+        {
+            C_MAP[N - i - 1][j] = MAP[i][j];
+        }
+    }
+    Copy_MAP(MAP, C_MAP);
+}
+
+void Cmd_Two()
+{
+    for (int j = 0; j < M; j++)
+    {
+        for (int i = 0; i < N; i++)
+        {
+            C_MAP[i][M - 1 - j] = MAP[i][j];
+        }
+    }
+    Copy_MAP(MAP, C_MAP);
+}
+
+void Cmd_Three()
+{
+    int NN = N;
+    swap(N, M);
+
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < M; j++)
+        {
+            C_MAP[i][j] = MAP[NN - 1 - j][i];
+        }
+    }
+    Copy_MAP(MAP, C_MAP);
+}
+
+void Cmd_Four()
+{
+    int MM = M;
+    swap(N, M);
+
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < M; j++)
+        {
+            C_MAP[i][j] = MAP[j][MM - 1 - i];
+        }
+    }
+    Copy_MAP(MAP, C_MAP);
+}
+
+void Cmd_Five()
+{
+    int Half_N = N / 2;
+    int Half_M = M / 2;
+
+    /* 1번을 2번으로 */
+    for (int i = 0; i < Half_N; i++)
+    {
+        for (int j = 0; j < Half_M; j++)
+        {
+            C_MAP[i][j + Half_M] = MAP[i][j];
+        }
+    }
+
+    /* 2번을 3번으로 */
+    for (int i = 0; i < Half_N; i++)
+    {
+        for (int j = Half_M; j < M; j++)
+        {
+            C_MAP[i + Half_N][j] = MAP[i][j];
+        }
+    }
+
+    /* 3번을 4번으로 */
+    for (int i = Half_N; i < N; i++)
+    {
+        for (int j = Half_M; j < M; j++)
+        {
+            C_MAP[i][j - Half_M] = MAP[i][j];
+        }
+    }
+
+    for (int i = Half_N; i < N; i++)
+    {
+        for (int j = 0; j < Half_M; j++)
+        {
+            C_MAP[i - Half_N][j] = MAP[i][j];
+        }
+    }
+    Copy_MAP(MAP, C_MAP);
+}
+
+void Cmd_Six()
+{
+    int Half_N = N / 2;
+    int Half_M = M / 2;
+
+    /* 1번을 4번으로 */
+    for (int i = 0; i < Half_N; i++)
+    {
+        for (int j = 0; j < Half_M; j++)
+        {
+            C_MAP[i + Half_N][j] = MAP[i][j];
+        }
+    }
+
+    /* 4번을 3번으로 */
+    for (int i = Half_N; i < N; i++)
+    {
+        for (int j = 0; j < Half_M; j++)
+        {
+            C_MAP[i][j + Half_M] = MAP[i][j];
+        }
+    }
+
+    /* 3번을 2번으로 */
+    for (int i = Half_N; i < N; i++)
+    {
+        for (int j = Half_M; j < M; j++)
+        {
+            C_MAP[i - Half_N][j] = MAP[i][j];
+        }
+    }
+
+    /* 2번을 1번으로 */
+    for (int i = 0; i < Half_N; i++)
+    {
+        for (int j = Half_M; j < M; j++)
+        {
+            C_MAP[i][j - Half_M] = MAP[i][j];
+        }
+    }
+    Copy_MAP(MAP, C_MAP);
+}
+
+void Solution()
+{
+    for (int i = 0; i < V.size(); i++)
+    {
+        int Cmd = V[i];
+        if (Cmd == 1) Cmd_One();
+        else if (Cmd == 2) Cmd_Two();
+        else if (Cmd == 3) Cmd_Three();
+        else if (Cmd == 4) Cmd_Four();
+        else if (Cmd == 5) Cmd_Five();
+        else Cmd_Six();
+    }
+    Print();
+}
+
+void Solve()
+{
+    Input();
+    Solution();
+}
+
+int main(void)
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    //freopen("Input.txt", "r", stdin);
+    Solve();
+
+    return 0;
+}
+//얍문에게 엄지척
