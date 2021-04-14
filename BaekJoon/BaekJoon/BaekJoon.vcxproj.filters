@@ -216,7 +216,10 @@
     <ClCompile Include="BaekJoon 16926번 배열 돌리기 1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="BaekJoon 16935번 배열 돌리기 2.cpp">
+    <ClCompile Include="BaekJoon 16927번 배열 돌리기 2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BaekJoon 16935번 배열 돌리기 3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
