@@ -11,6 +11,13 @@ vector<tiii> tmp[50 + 1][50 + 1];
 int dy[8] = { -1,-1,0,1,1,1,0,-1 };
 int dx[8] = { 0,1,1,1,0,-1,-1,-1 };
 
+void input() {
+	for (int i = 0; i < M;i++) {
+		int r, c, m, s, d; cin >> r >> c >> m >> s >> d;
+		vec[r - 1][c - 1].push_back({ m,s,d });
+	}
+}
+
 void clear() {
 	for (int i = 0; i < N;i++) {
 		for (int j = 0; j < N;j++) {
@@ -24,6 +31,20 @@ void cleartmp() {
 			tmp[i][j].clear();
 		}
 	}
+}
+
+int output() {
+	int ans = 0;
+	for (int i = 0; i < N;i++) {
+		for (int j = 0; j < N;j++) {
+			if (vec[i][j].size() == 0) continue;
+			for (auto now : vec[i][j]) {
+				auto [m, s, d] = now;
+				ans += m;
+			}
+		}
+	}
+	return ans;
 }
 
 void move() {
@@ -71,32 +92,18 @@ void cal() {
 	}
 }
 
-
 int32_t main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	cin >> N >> M >> K;
-	for (int i = 0; i < M;i++) {
-		int r, c, m, s, d; cin >> r >> c >> m >> s >> d;
-		vec[r-1][c-1].push_back({ m,s,d });
-	}
+	input();
 	while (K--) {	
 		cleartmp();
 		move();
 		clear();
 		cal();
 	}
-	int ans = 0;
-	for (int i = 0; i < N;i++) {
-		for (int j = 0; j < N;j++) {
-			if (vec[i][j].size() == 0) continue;
-			for (auto now : vec[i][j]) {
-				auto [m, s, d] = now;
-				ans += m;
-			}
-		}
-	}
-	cout << ans;
+	cout << output();
 	return 0;
 }
