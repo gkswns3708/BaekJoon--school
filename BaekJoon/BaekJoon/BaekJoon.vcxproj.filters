@@ -231,5 +231,8 @@
     <ClCompile Include="BaekJoon 20058번 마법사 상어와 파이어스톰.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 17406번 배열 돌리기 4.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
