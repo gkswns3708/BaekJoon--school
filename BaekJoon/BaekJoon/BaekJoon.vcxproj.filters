@@ -234,5 +234,8 @@
     <ClCompile Include="BaekJoon 17406번 배열 돌리기 4.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 1056번 수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
