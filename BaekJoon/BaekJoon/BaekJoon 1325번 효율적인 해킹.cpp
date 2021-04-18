@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <functional>
 #include <algorithm>
 #include <queue>
+#include <string>
 using namespace std;
 const int SZ = 1 << 20;
 
@@ -127,7 +129,7 @@ int main() {
 		edge[to].push_back(from);
 	}
 
-	auto BFS = [&](int st) -> int {
+	function <int(int)> BFS = [&](int st) -> int {
 		bool visited[10000 + 1] = { 0, };
 		int cnt = 1;
 		queue<int> que;
