@@ -11,12 +11,13 @@ int32_t main() {
 	string s1, s2;
 	cin >> s1 >> s2;
 	string temp = "";
-	int gap = max(s1.length(), s2.length()) - min(s1.length(), s2.length());
+	int len1 = s1.length(), len2 = s2.length();
+	int gap = max(len1, len2) - min(len1, len2);
 	for (int i = 0; i < gap;i++) temp.push_back('0');
-	if (s1.length() > s2.length()) temp += s2,s2 = temp;
+	if (len1 > len2) temp += s2,s2 = temp;
 	else temp += s1, s1 = temp;
 	bool flag = false;
-	vector<int> ans(max(s1.length(), s2.length()));
+	vector<int> ans(max(len1, len2));
 	for (int i = temp.size()-1; i >= 0;i--) {
 		int num = s1[i] + s2[i] - '0' - '0' + flag;
 		if (num >= 10) flag = 1,ans[i] = num-10;
