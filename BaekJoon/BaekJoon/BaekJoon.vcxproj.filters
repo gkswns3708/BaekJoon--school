@@ -243,5 +243,8 @@
     <ClCompile Include="BaekJoon 18870번 좌표 압축.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 9184번 신나는 함수 실행.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
