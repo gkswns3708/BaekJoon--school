@@ -249,5 +249,8 @@
     <ClCompile Include="BaekJoon 20040번 사이클 게임.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 16933번 벽 부수고 이동하기 3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
