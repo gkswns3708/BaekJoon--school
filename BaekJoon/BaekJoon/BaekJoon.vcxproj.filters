@@ -255,5 +255,8 @@
     <ClCompile Include="BaekJoon 18808번 스티커 붙이기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 11725번 트리의 부모 찾기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
