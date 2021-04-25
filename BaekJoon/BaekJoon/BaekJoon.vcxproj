@@ -262,7 +262,9 @@
     <ClCompile Include="BaekJoon 16927번 배열 돌리기 2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="BaekJoon 16933번 벽 부수고 이동하기 3.cpp" />
+    <ClCompile Include="BaekJoon 16933번 벽 부수고 이동하기 3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="BaekJoon 16935번 배열 돌리기 3.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -290,6 +292,7 @@
     <ClCompile Include="BaekJoon 18352번 특정 거리의 도시 찾기.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="BaekJoon 18808번 스티커 붙이기.cpp" />
     <ClCompile Include="BaekJoon 18870번 좌표 압축.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
