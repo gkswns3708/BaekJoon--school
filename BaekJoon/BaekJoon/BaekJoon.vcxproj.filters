@@ -270,5 +270,8 @@
     <ClCompile Include="BaekJoon 1991번 트리 순회.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 1967번 트리의 지름.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
