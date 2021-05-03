@@ -285,5 +285,8 @@
     <ClCompile Include="BaekJoon 16507번 어두운 건 무서워.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 19539번 사과나무.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
