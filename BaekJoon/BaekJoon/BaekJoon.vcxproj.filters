@@ -297,5 +297,8 @@
     <ClCompile Include="BaekJoon 2381번 최대 거리.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BaekJoon 2168번 타일 위의 대각선.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
